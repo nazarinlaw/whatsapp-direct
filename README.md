@@ -1,2 +1,4 @@
 # whatsapp-text
-To send text directly on whatsapp to a number without saving.
+Send text directly on whatsapp without saving the number.
+
+[Live](https://walifaizy.github.io/whatsapp-direct)

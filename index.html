@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Whatsapp Text</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;;
+    }
+    .wrapper {
+      max-width: 460px;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+    .middle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 50px;
+    }
+    h1 {
+      color: #fff;
+      font-family: 'Indie Flower', cursive;
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+    }
+    h2 {
+      color: #fff;
+      font-family: 'Indie Flower', cursive;
+      font-size: 20px;
+      font-weight: normal;
+      text-align: center;
+      margin: 10px auto 0 auto;
+      max-width: 270px;
+    }
+    #fancy-inputs {
+      width: 100%;
+    }
+    #fancy-inputs label.input {
+      float: left;
+      width: 100%;
+      height: 42px;
+      margin: 40px 0 30px 0;
+      position: relative;
+      clear: both;
+    }
+    #fancy-inputs label.input span {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      position: absolute;
+      left: 0;
+      cursor: text;
+    }
+    #fancy-inputs label.input span span {
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      font-family: 'Indie Flower', cursive;
+      font-size: 22px;
+      color: #fff;
+      text-indent: 10px;
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+    }
+    #fancy-inputs label.input span:before {
+      content: '';
+      width: 0%;
+      height: 3px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 99;
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+    }
+    #fancy-inputs label.input span:after {
+      content: '';
+      width: 0%;
+      height: 3px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 99;
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+    }
+    #fancy-inputs input {
+      float: left;
+      width: 100%;
+      height: 40px;
+      padding: 0 10px;
+      border: 0;
+      border-bottom: 3px solid #fff;
+      background-color: transparent;
+      color: #fff;
+      font-family: 'Indie Flower', cursive;
+      font-size: 22px;
+      position: relative;
+      z-index: 99;
+    }
+    #fancy-inputs input:focus {
+      outline: 0;
+    }
+    #fancy-inputs input.white {
+      background-color: #e74c3c;
+    }
+    #fancy-inputs input:focus + span span {
+      cursor: initial;
+      position: absolute;
+      top: -35px;
+    }
+    #fancy-inputs input:focus + span:before {
+      width: 50%;
+    }
+    #fancy-inputs input:focus + span:after {
+      width: 50%;
+    }
+    #fancy-inputs span.fixed span {
+      top: -35px;
+    }
+    #fancy-radio {
+      float: left;
+      width: 100%;
+      margin: 0 0 30px 0;
+    }
+    #fancy-radio label.radio {
+      float: left;
+      width: auto;
+      line-height: 30px;
+      margin: 0 0 10px 0;
+      color: #fff;
+      font-family: 'Indie Flower', cursive;
+      font-size: 22px;
+      cursor: pointer;
+      position: relative;
+      clear: both;
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+    }
+    #fancy-radio label.radio:before {
+      content: '';
+      float: left;
+      width: 29px;
+      height: 29px;
+      margin: 0 5px 0 0;
+      background-color: #fff;
+      border-radius: 100%;
+      font-size: 22px;
+      text-indent: 40px;
+    }
+    #fancy-radio label.radio:after {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background-color: #2c3e50;
+      border-radius: 100%;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      opacity: 0;
+      transition: 0.2s;
+      -webkit-transition: 0.2s;
+      -moz-transition: 0.2s;
+    }
+    #fancy-radio label.radio.selected:after {
+      width: 15.5px;
+      height: 15.5px;
+      top: 7px;
+      left: 7px;
+      opacity: 1;
+    }
+    #fancy-radio label.radio:hover {
+      text-indent: 5px;
+    }
+    .btn {
+      border: 2px solid #fff;
+      float: left;
+      width: 100%;
+      height: 50px;
+      font-weight: 700;
+      line-height: 50px;
+      background-color: #000000;
+      color: #fff;
+      font-family: 'Indie Flower', cursive;
+      font-size: 22px;
+      text-decoration: none;
+      text-align: center;
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #212222;
+    }
+   </style>
+</head>
+<body>
+  <div class="wrapper">
+    <form class="middle" onsubmit="return onSubmit()">
+      <h1>Whatsapp Direct</h1>
+      <h2>Send text directly on whatsapp without saving the number</h2>
+
+      <div id="fancy-inputs">
+        <label class="input">
+          <input type="text" id="phoneNr" />
+          <span><span>Phone Number</span></span>
+        </label>
+      </div>
+      <input class="btn" type="submit" value="Submit" />
+    </form>
+  </div>
+
+  <script>
+    function onSubmit() {
+      const phoneElement = document.querySelector('#phoneNr');
+      const phoneNr = phoneElement.value.replace(/[\s+]+/g,'');
+
+      if (phoneNr && !isNaN(phoneNr)) {
+        window.open(`https://api.WhatsApp.com/send?phone=${phoneNr}`, '_blank')
+        phoneElement.value = '';
+      } else {
+        alert('Invalid Number.')
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
