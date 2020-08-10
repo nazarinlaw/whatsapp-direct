@@ -215,7 +215,7 @@
 
       <div id="fancy-inputs">
         <label class="input">
-          <input type="text" id="phoneNr" value="+971" />
+          <input type="text" id="phoneNr" />
           <span><span>Phone Number</span></span>
         </label>
       </div>
@@ -233,15 +233,15 @@
         // check if mobile browser or desktop
         if(isMobile())
         {
-          window.location = "whatsapp://send?text=&phone="+phoneNr;
+          window.location = "whatsapp://send?text=&phone=+971"+phoneNr;
           // whatsapp url scheme for mobile
         }
         else
         {
-          window.location = "https://web.whatsapp.com/send?text=&phone="+phoneNr;
+          window.location = "https://web.whatsapp.com/send?text=&phone=+971"+phoneNr;
           // open whatsapp web to send message for desktop
         }
-        phoneElement.value = '+971';
+        phoneElement.value = '';
       } else {
         alert('Invalid Number.')
       }
