@@ -226,19 +226,19 @@
   <script>
     function onSubmit() {
       const phoneElement = document.querySelector('#phoneNr');
-      const phoneNr = phoneElement.value.replace(/[\s+]+/g,'');
+      const phone = phoneElement.value.replace(/[\s+]+/g,'');
 
-      if (phoneNr && !isNaN(phoneNr)) {
+      if (!isNaN(phone)) {
         
         // check if mobile browser or desktop
         if(isMobile())
         {
-          window.location = "whatsapp://send?text=&phone=+971"+phoneNr;
+          window.location = "whatsapp://send?text=&phone=+"+phone;
           // whatsapp url scheme for mobile
         }
         else
         {
-          window.location = "https://web.whatsapp.com/send?text=&phone=+971"+phoneNr;
+          window.location = "https://web.whatsapp.com/send?text=&phone=+"+phone;
           // open whatsapp web to send message for desktop
         }
         phoneElement.value = '';
