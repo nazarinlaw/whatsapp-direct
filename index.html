@@ -215,7 +215,7 @@
 
       <div id="fancy-inputs">
         <label class="input">
-          <input type="text" id="phoneNr" />
+          <input type="text" id="phoneNr" value="+971" />
           <span><span>Phone Number</span></span>
         </label>
       </div>
@@ -230,7 +230,7 @@
 
       if (phoneNr && !isNaN(phoneNr)) {
         window.location = "whatsapp://send?text=&phone="+phoneNr
-        phoneElement.value = '';
+        phoneElement.value = '+971';
       } else {
         alert('Invalid Number.')
       }
