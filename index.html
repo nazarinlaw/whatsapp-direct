@@ -229,7 +229,7 @@
       const phoneNr = phoneElement.value.replace(/[\s+]+/g,'');
 
       if (phoneNr && !isNaN(phoneNr)) {
-        window.open(`https://api.WhatsApp.com/send?phone=${phoneNr}`, '_blank')
+        window.location = "whatsapp://send?text=&phone="+phoneNr
         phoneElement.value = '';
       } else {
         alert('Invalid Number.')
