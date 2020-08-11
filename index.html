@@ -228,7 +228,7 @@
       const phoneElement = document.querySelector('#phoneNr');
       const phone = phoneElement.value.replace(/[\s+]+/g,'');
 
-      if (!isNaN(phone)) {
+       if (phone && !isNaN(phone)) {
         
         // check if mobile browser or desktop
         if(isMobile())
@@ -243,7 +243,8 @@
         }
         phoneElement.value = '';
       } else {
-        alert('Invalid Number.')
+          alert('Please enter a valid phone number.')
+          phoneElement.focus();
       }
       return false;
     }
